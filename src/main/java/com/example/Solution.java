@@ -46,4 +46,14 @@ public class Solution {
         System.out.printf("\nLegdrágább bérlés: %s (%,d Ft)\n", 
             maxBerles.getTitle(), maxBerles.getTotalPrice());
     }
+
+    public static void task05() {
+        ArrayList<Integer> egyediPaintingid = new ArrayList<>();
+        for(Berles berles : berlesList) {
+            if(!egyediPaintingid.contains(berles.getPaintingid())) {
+                egyediPaintingid.add(berles.getPaintingid());
+            }
+        }
+        System.out.printf("Különböző festmények száma: %d\n", egyediPaintingid.size());
+    }
 }
