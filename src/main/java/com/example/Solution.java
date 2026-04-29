@@ -26,4 +26,12 @@ public class Solution {
         }
         System.out.printf("\nA(z) %d. havi bevétel: %,d Ft\n", month, sum);
     }
+
+    public static void task03() {
+        long sum = 0;
+        for(Berles berles : berlesList) {
+            sum += berles.getTotalPrice();
+        }
+        System.out.printf("\nTeljes éves bevétel: %,d Ft\n", sum);
+    }
 }
