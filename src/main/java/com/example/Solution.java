@@ -34,4 +34,16 @@ public class Solution {
         }
         System.out.printf("\nTeljes éves bevétel: %,d Ft\n", sum);
     }
+
+    public static void task04() {
+        //Legdrábább bérlés
+        Berles maxBerles = berlesList.get(0);
+        for(Berles berles : berlesList) {
+            if(berles.getTotalPrice() > maxBerles.getTotalPrice()) {
+                maxBerles = berles;
+            }
+        }
+        System.out.printf("\nLegdrágább bérlés: %s (%,d Ft)\n", 
+            maxBerles.getTitle(), maxBerles.getTotalPrice());
+    }
 }
