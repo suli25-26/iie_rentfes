@@ -1,5 +1,6 @@
 package com.example;
 
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -84,10 +85,17 @@ public class Solution {
             String artist = berles.getArtist();
             stat.put(artist, stat.getOrDefault(artist, 0) + 1);
         }
-        System.out.println("Bérlések száma felstőnként:");
+        System.out.println("\nBérlések száma festőnként:");
         for(Map.Entry<String, Integer> entry :stat.entrySet()) {
             System.out.printf("%s: %d db\n", entry.getKey(), entry.getValue());
         }
     }
-    public static void task08() {}
+    public static void task08() {
+        int sumDay = 0;
+        for(Berles berles : berlesList) {
+            sumDay += ChronoUnit.DAYS.between(berles.getStartDate(), berles.getEndDate());
+        }
+        double average = (double) sumDay / berlesList.size();
+        System.out.printf("\nÁtlagos bérlési időtartam: %.1f\n", average);
+    }
 }
