@@ -7,5 +7,6 @@ public class Main {
         Solution.task03();
         Solution.task04();
         Solution.task05();
+        Solution.task06();
     }
 }

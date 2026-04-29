@@ -1,6 +1,8 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Solution {
@@ -56,4 +58,26 @@ public class Solution {
         }
         System.out.printf("Különböző festmények száma: %d\n", egyediPaintingid.size());
     }
+
+    public static void task06() {
+        Map<String, Integer> stat = new HashMap<>();
+        for(Berles berles : berlesList) {
+            String title = berles.getTitle();
+            stat.put(title, stat.getOrDefault(title, 0) + 1);
+        }
+
+        String maxTitle = "";
+        int maxCount = -1;
+
+        for(Map.Entry<String, Integer> entry :stat.entrySet()) {
+            if(entry.getValue()> maxCount) {
+                maxCount = entry.getValue();
+                maxTitle = entry.getKey();
+            }
+        }
+        System.out.printf("Legtöbbször bérelt festmény: %s (%d alkalom)\n", 
+            maxTitle, maxCount);
+    }
+    public static void task07() {}
+    public static void task08() {}
 }
