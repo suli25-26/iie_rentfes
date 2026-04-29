@@ -78,6 +78,16 @@ public class Solution {
         System.out.printf("Legtöbbször bérelt festmény: %s (%d alkalom)\n", 
             maxTitle, maxCount);
     }
-    public static void task07() {}
+    public static void task07() {
+        Map<String, Integer> stat = new HashMap<>();
+        for(Berles berles : berlesList) {
+            String artist = berles.getArtist();
+            stat.put(artist, stat.getOrDefault(artist, 0) + 1);
+        }
+        System.out.println("Bérlések száma felstőnként:");
+        for(Map.Entry<String, Integer> entry :stat.entrySet()) {
+            System.out.printf("%s: %d db\n", entry.getKey(), entry.getValue());
+        }
+    }
     public static void task08() {}
 }
